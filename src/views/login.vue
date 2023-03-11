@@ -43,10 +43,10 @@
           /></template>
         </el-input>
         <div class="login-code">
-          <img :src="codeUrl" @click="getCode" class="login-code-img" />
+          <img :src="codeUrl" @click="getCode" class="login-code-img"  alt=""/>
         </div>
       </el-form-item>
-      <el-checkbox v-model="loginForm.rememberMe" style="margin: 0px 0px 25px 0px"
+      <el-checkbox v-model="loginForm.rememberMe" style="margin: 0 0 25px 0"
         >记住密码</el-checkbox
       >
       <el-form-item style="width: 100%">
@@ -107,7 +107,7 @@ const register = ref(false)
 const redirect = ref(undefined)
 
 function handleLogin() {
-  proxy.$refs.loginRef.validate((valid) => {
+  proxy.$refs['loginRef'].validate((valid) => {
     if (valid) {
       loading.value = true
       // 勾选了需要记住密码设置在 cookie 中设置记住用户名和密码
@@ -140,7 +140,7 @@ function handleLogin() {
 
 function getCode() {
   getCodeImg().then((res) => {
-    captchaEnabled.value = res.captchaEnabled === undefined ? true : res.captchaEnabled
+    captchaEnabled.value = res[captchaEnabled] === undefined ? true : res[captchaEnabled]
     if (captchaEnabled.value) {
       codeUrl.value = 'data:image/gif;base64,' + res.img
       loginForm.value.uuid = res.uuid
@@ -173,7 +173,7 @@ getCookie()
   background-size: cover;
 }
 .title {
-  margin: 0px auto 30px auto;
+  margin: 0 auto 30px auto;
   text-align: center;
   color: #707070;
 }
@@ -192,7 +192,7 @@ getCookie()
   .input-icon {
     height: 39px;
     width: 14px;
-    margin-left: 0px;
+    margin-left: 0;
   }
 }
 .login-tip {
@@ -217,7 +217,7 @@ getCookie()
   width: 100%;
   text-align: center;
   color: #fff;
-  font-family: Arial;
+  font-family: Arial,serif;
   font-size: 12px;
   letter-spacing: 1px;
 }
