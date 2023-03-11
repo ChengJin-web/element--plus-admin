@@ -364,7 +364,7 @@ import {
 } from '@/api/monitor/job'
 import Crontab from '@/components/Crontab'
 import {useRouter} from "vue-router";
-import {getCurrentInstance, reactive, ref} from "vue";
+import {getCurrentInstance, reactive, ref, toRefs} from "vue";
 const router = useRouter()
 const { proxy } = getCurrentInstance()
 const { sys_job_group, sys_job_status } = proxy.useDict('sys_job_group', 'sys_job_status')

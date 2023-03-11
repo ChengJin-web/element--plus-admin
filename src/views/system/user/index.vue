@@ -597,6 +597,7 @@ function handleStatusChange(row) {
     })
 }
 /** 更多操作 */
+// eslint-disable-next-line no-unused-vars
 function handleCommand(command, row) {
   switch (command) {
     case 'handleResetPwd':
@@ -625,6 +626,7 @@ function handleResetPwd(row) {
       inputErrorMessage: '用户密码长度必须介于 5 和 20 之间'
     })
     .then(({ value }) => {
+      // eslint-disable-next-line no-unused-vars
       resetUserPwd(row.userId, value).then((response) => {
         proxy.$modal.msgSuccess('修改成功，新密码是：' + value)
       })
@@ -647,10 +649,12 @@ function importTemplate() {
   proxy.download('system/user/importTemplate', {}, `user_template_${new Date().getTime()}.xlsx`)
 }
 /**文件上传中处理 */
+// eslint-disable-next-line no-unused-vars
 const handleFileUploadProgress = (event, file, fileList) => {
   upload.isUploading = true
 }
 /** 文件上传成功处理 */
+// eslint-disable-next-line no-unused-vars
 const handleFileSuccess = (response, file, fileList) => {
   upload.open = false
   upload.isUploading = false
@@ -722,12 +726,14 @@ function submitForm() {
   proxy.$refs['userRef'].validate((valid) => {
     if (valid) {
       if (form.value.userId != undefined) {
+        // eslint-disable-next-line no-unused-vars
         updateUser(form.value).then((response) => {
           proxy.$modal.msgSuccess('修改成功')
           open.value = false
           getList()
         })
       } else {
+        // eslint-disable-next-line no-unused-vars
         addUser(form.value).then((response) => {
           proxy.$modal.msgSuccess('新增成功')
           open.value = false

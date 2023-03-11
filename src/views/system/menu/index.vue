@@ -348,7 +348,7 @@ import { addMenu, delMenu, getMenu, listMenu, updateMenu } from '@/api/system/me
 import SvgIcon from '@/components/SvgIcon'
 import IconSelect from '@/components/IconSelect'
 import { ClickOutside as vClickOutside } from 'element-plus'
-import {nextTick, reactive, ref, toRefs} from "vue";
+import {getCurrentInstance, nextTick, reactive, ref, toRefs} from "vue";
 
 const { proxy } = getCurrentInstance()
 const { sys_show_hide, sys_normal_disable } = proxy.useDict('sys_show_hide', 'sys_normal_disable')

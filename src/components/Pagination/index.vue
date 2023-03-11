@@ -16,6 +16,7 @@
 
 <script setup>
 import { scrollTo } from '@/utils/scroll-to'
+import {computed} from "vue";
 
 const props = defineProps({
   total: {

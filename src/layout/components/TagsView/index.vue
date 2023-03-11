@@ -45,7 +45,7 @@ import { getNormalPath } from '@/utils/ruoyi'
 import useTagsViewStore from '@/store/modules/tagsView'
 import useSettingsStore from '@/store/modules/settings'
 import usePermissionStore from '@/store/modules/permission'
-import {computed, getCurrentInstance, onMounted, ref, watch} from "vue";
+import {computed, getCurrentInstance, nextTick, onMounted, ref, watch} from "vue";
 import {useRoute, useRouter} from "vue-router";
 
 const visible = ref(false)
