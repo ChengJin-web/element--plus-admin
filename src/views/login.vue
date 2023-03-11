@@ -67,97 +67,100 @@
     </el-form>
     <!--  底部  -->
     <div class="el-login-footer">
-      <span>Copyright © 2018-2023 ruoyi.vip All Rights Reserved.</span>
+      <span>Copyright © 2023-2023 ChengJin All Rights Reserved.</span>
     </div>
   </div>
 </template>
 
 <script setup>
-import {getCurrentInstance, ref} from 'vue';
-import { getCodeImg } from "@/api/login";
-import Cookies from "js-cookie";
-import { encrypt, decrypt } from "@/utils/jsencrypt";
+import { getCurrentInstance, ref } from 'vue'
+import { getCodeImg } from '@/api/login'
+import Cookies from 'js-cookie'
+import { encrypt, decrypt } from '@/utils/jsencrypt'
 import useUserStore from '@/store/modules/user'
-import {useRouter} from "vue-router";
+import { useRouter } from 'vue-router'
 
 const userStore = useUserStore()
-const router = useRouter();
-const { proxy } = getCurrentInstance();
+const router = useRouter()
+const { proxy } = getCurrentInstance()
 
 const loginForm = ref({
-  username: "admin",
-  password: "admin123",
+  username: 'admin',
+  password: 'admin123',
   rememberMe: false,
-  code: "",
-  uuid: ""
-});
+  code: '',
+  uuid: ''
+})
 
 const loginRules = {
-  username: [{ required: true, trigger: "blur", message: "请输入您的账号" }],
-  password: [{ required: true, trigger: "blur", message: "请输入您的密码" }],
-  code: [{ required: true, trigger: "change", message: "请输入验证码" }]
-};
+  username: [{ required: true, trigger: 'blur', message: '请输入您的账号' }],
+  password: [{ required: true, trigger: 'blur', message: '请输入您的密码' }],
+  code: [{ required: true, trigger: 'change', message: '请输入验证码' }]
+}
 
-const codeUrl = ref("");
-const loading = ref(false);
+const codeUrl = ref('')
+const loading = ref(false)
 // 验证码开关
-const captchaEnabled = ref(true);
+const captchaEnabled = ref(true)
 // 注册开关
-const register = ref(false);
-const redirect = ref(undefined);
+const register = ref(false)
+const redirect = ref(undefined)
 
 function handleLogin() {
-  proxy.$refs.loginRef.validate(valid => {
+  proxy.$refs.loginRef.validate((valid) => {
     if (valid) {
-      loading.value = true;
+      loading.value = true
       // 勾选了需要记住密码设置在 cookie 中设置记住用户名和密码
       if (loginForm.value.rememberMe) {
-        Cookies.set("username", loginForm.value.username, { expires: 30 });
-        Cookies.set("password", encrypt(loginForm.value.password), { expires: 30 });
-        Cookies.set("rememberMe", loginForm.value.rememberMe, { expires: 30 });
+        Cookies.set('username', loginForm.value.username, { expires: 30 })
+        Cookies.set('password', encrypt(loginForm.value.password), { expires: 30 })
+        Cookies.set('rememberMe', loginForm.value.rememberMe, { expires: 30 })
       } else {
         // 否则移除
-        Cookies.remove("username");
-        Cookies.remove("password");
-        Cookies.remove("rememberMe");
+        Cookies.remove('username')
+        Cookies.remove('password')
+        Cookies.remove('rememberMe')
       }
       // 调用action的登录方法
-      userStore.login(loginForm.value).then(() => {
-        router.push({ path: redirect.value || "/" });
-      }).catch(() => {
-        loading.value = false;
-        // 重新获取验证码
-        if (captchaEnabled.value) {
-          getCode();
-        }
-      });
+      userStore
+        .login(loginForm.value)
+        .then(() => {
+          router.push({ path: redirect.value || '/' })
+        })
+        .catch(() => {
+          loading.value = false
+          // 重新获取验证码
+          if (captchaEnabled.value) {
+            getCode()
+          }
+        })
     }
-  });
+  })
 }
 
 function getCode() {
-  getCodeImg().then(res => {
-    captchaEnabled.value = res.captchaEnabled === undefined ? true : res.captchaEnabled;
+  getCodeImg().then((res) => {
+    captchaEnabled.value = res.captchaEnabled === undefined ? true : res.captchaEnabled
     if (captchaEnabled.value) {
-      codeUrl.value = "data:image/gif;base64," + res.img;
-      loginForm.value.uuid = res.uuid;
+      codeUrl.value = 'data:image/gif;base64,' + res.img
+      loginForm.value.uuid = res.uuid
     }
-  });
+  })
 }
 
 function getCookie() {
-  const username = Cookies.get("username");
-  const password = Cookies.get("password");
-  const rememberMe = Cookies.get("rememberMe");
+  const username = Cookies.get('username')
+  const password = Cookies.get('password')
+  const rememberMe = Cookies.get('rememberMe')
   loginForm.value = {
     username: username === undefined ? loginForm.value.username : username,
     password: password === undefined ? loginForm.value.password : decrypt(password),
     rememberMe: rememberMe === undefined ? false : Boolean(rememberMe)
-  };
+  }
 }
 
-getCode();
-getCookie();
+getCode()
+getCookie()
 </script>
 
 <style lang="scss" scoped>

@@ -1,5 +1,4 @@
 import {fileURLToPath, URL} from 'node:url'
-import path from 'path'
 import {defineConfig} from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
@@ -11,9 +10,8 @@ export default defineConfig({
         vue(),
         vueJsx(),
         createSvgIconsPlugin({
-            iconDirs: [path.resolve(process.cwd(), 'src/assets/icons/svg')],
-            symbolId: 'icon-[dir]-[name]',
-            svgoOptions: false
+            iconDirs: [fileURLToPath(new URL('src/assets/icons/svg', import.meta.url))],
+            symbolId: 'icon-[dir]-[name]'
         })
     ],
     resolve: {
@@ -25,11 +23,10 @@ export default defineConfig({
     server: {
         port: 80,
         host: true,
-        open: true,
+        open: false,
         proxy: {
-            // https://cn.vitejs.dev/config/#server-proxy
             '/dev-api': {
-                target: 'http://localhost:8080',
+                target: 'http://vue.ruoyi.vip/',
                 changeOrigin: true,
                 rewrite: (p) => p.replace(/^\/dev-api/, '')
             }

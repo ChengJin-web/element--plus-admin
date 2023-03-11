@@ -11,10 +11,17 @@ import '@/assets/styles/index.scss' // global css
 import App from './App.vue'
 import router from './router'
 
+// svg图标
+import 'virtual:svg-icons-register'
+import SvgIcon from '@/components/SvgIcon/index.vue'
+import elementIcons from '@/components/SvgIcon/svgicon'
+
 const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
+app.use(elementIcons)
+app.component('svg-icon', SvgIcon)
 
 // 使用element-plus 并且设置全局的大小
 app.use(ElementPlus, {
