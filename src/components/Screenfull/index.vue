@@ -7,6 +7,7 @@
 <script setup>
 import { useFullscreen } from '@vueuse/core'
 
+// eslint-disable-next-line no-unused-vars
 const { isFullscreen, enter, exit, toggle } = useFullscreen()
 </script>
 

@@ -206,6 +206,8 @@
 <script setup name="JobLog">
 import { getJob } from '@/api/monitor/job'
 import { listJobLog, delJobLog, cleanJobLog } from '@/api/monitor/jobLog'
+import {getCurrentInstance, reactive, ref, toRefs} from "vue";
+import {useRoute} from "vue-router";
 
 const { proxy } = getCurrentInstance()
 const { sys_common_status, sys_job_group } = proxy.useDict('sys_common_status', 'sys_job_group')
@@ -231,6 +233,7 @@ const data = reactive({
   }
 })
 
+// eslint-disable-next-line no-unused-vars
 const { queryParams, form, rules } = toRefs(data)
 
 /** 查询调度日志列表 */

@@ -19,15 +19,19 @@
 
 <script setup>
 import { useWindowSize } from '@vueuse/core'
+// eslint-disable-next-line no-unused-vars
 import Sidebar from './components/Sidebar/index.vue'
 import { AppMain, Navbar, Settings, TagsView } from './components'
+// eslint-disable-next-line no-unused-vars
 import defaultSettings from '@/settings'
 
 import useAppStore from '@/store/modules/app'
 import useSettingsStore from '@/store/modules/settings'
+import {computed, ref, watchEffect} from "vue";
 
 const settingsStore = useSettingsStore()
 const theme = computed(() => settingsStore.theme)
+// eslint-disable-next-line no-unused-vars
 const sideTheme = computed(() => settingsStore.sideTheme)
 const sidebar = computed(() => useAppStore().sidebar)
 const device = computed(() => useAppStore().device)
@@ -41,6 +45,7 @@ const classObj = computed(() => ({
   mobile: device.value === 'mobile'
 }))
 
+// eslint-disable-next-line no-unused-vars
 const { width, height } = useWindowSize()
 const WIDTH = 992 // refer to Bootstrap's responsive design
 

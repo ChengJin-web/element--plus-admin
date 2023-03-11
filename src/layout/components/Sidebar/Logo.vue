@@ -41,6 +41,7 @@
 import variables from '@/assets/styles/variables.module.scss'
 import logo from '@/assets/logo/logo.png'
 import useSettingsStore from '@/store/modules/settings'
+import {computed, ref} from "vue";
 
 defineProps({
   collapse: {

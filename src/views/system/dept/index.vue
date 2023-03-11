@@ -173,6 +173,7 @@ import {
   updateDept,
   listDeptExcludeChild
 } from '@/api/system/dept'
+import {getCurrentInstance, nextTick, reactive, ref, toRefs} from "vue";
 
 const { proxy } = getCurrentInstance()
 const { sys_normal_disable } = proxy.useDict('sys_normal_disable')

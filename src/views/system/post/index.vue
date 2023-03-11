@@ -171,6 +171,7 @@
 </template>
 
 <script setup name="Post">
+import {getCurrentInstance, reactive, ref, toRefs} from "vue";
 import { listPost, addPost, delPost, getPost, updatePost } from '@/api/system/post'
 
 const { proxy } = getCurrentInstance()

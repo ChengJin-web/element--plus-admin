@@ -13,6 +13,7 @@
 <script setup>
 import { QuillEditor } from '@vueup/vue-quill'
 import '@vueup/vue-quill/dist/vue-quill.snow.css'
+import {computed, ref, watch} from "vue";
 
 const props = defineProps({
   /* 编辑器的内容 */
@@ -75,7 +76,7 @@ const content = ref('')
 watch(
   () => props.modelValue,
   (v) => {
-    if (v !== content) {
+    if (v !== content.value) {
       content.value = v === undefined ? '<p></p>' : v
     }
   },

@@ -216,6 +216,7 @@ import {
   updateConfig,
   refreshCache
 } from '@/api/system/config'
+import {getCurrentInstance, reactive, ref, toRefs} from "vue";
 
 const { proxy } = getCurrentInstance()
 const { sys_yes_no } = proxy.useDict('sys_yes_no')

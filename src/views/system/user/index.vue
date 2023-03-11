@@ -427,6 +427,7 @@
 </template>
 
 <script setup name="User">
+import {getCurrentInstance, reactive, ref, toRefs, watch} from "vue";
 import { getToken } from '@/utils/auth'
 import {
   changeUserStatus,
@@ -438,6 +439,7 @@ import {
   addUser,
   deptTreeSelect
 } from '@/api/system/user'
+import {useRouter} from "vue-router";
 
 const router = useRouter()
 const { proxy } = getCurrentInstance()

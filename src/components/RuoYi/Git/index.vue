@@ -5,6 +5,8 @@
 </template>
 
 <script setup>
+import {ref} from "vue";
+
 const url = ref('https://gitee.com/y_project/RuoYi-Vue')
 
 function goto() {

@@ -24,6 +24,7 @@
 
 <script setup>
 import { updateUserProfile } from '@/api/system/user'
+import {getCurrentInstance, ref} from "vue";
 
 const props = defineProps({
   user: {
