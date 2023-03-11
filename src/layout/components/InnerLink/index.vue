@@ -7,7 +7,7 @@
 <script setup>
 import {ref} from "vue";
 
-const props = defineProps({
+defineProps({
   src: {
     type: String,
     default: '/'

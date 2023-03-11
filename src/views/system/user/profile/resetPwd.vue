@@ -33,7 +33,7 @@
 
 <script setup>
 import { updateUserPwd } from '@/api/system/user'
-import {getCurrentInstance, reactive} from "vue";
+import {getCurrentInstance, reactive, ref} from "vue";
 
 const { proxy } = getCurrentInstance()
 

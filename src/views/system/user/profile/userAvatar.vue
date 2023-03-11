@@ -11,7 +11,7 @@
     >
       <el-row>
         <el-col :xs="24" :md="12" :style="{ height: '350px' }">
-          <vue-cropper
+          <VueCropper
             ref="cropper"
             :img="options.img"
             :info="true"
