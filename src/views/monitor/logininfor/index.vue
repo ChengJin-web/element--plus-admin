@@ -162,7 +162,7 @@
 
 <script setup name="Logininfor">
 import { list, delLogininfor, cleanLogininfor, unlockLogininfor } from '@/api/monitor/logininfor'
-import {getCurrentInstance, ref} from "vue";
+import { getCurrentInstance, ref } from 'vue'
 
 const { proxy } = getCurrentInstance()
 const { sys_common_status } = proxy.useDict('sys_common_status')

@@ -27,7 +27,7 @@ import defaultSettings from '@/settings'
 
 import useAppStore from '@/store/modules/app'
 import useSettingsStore from '@/store/modules/settings'
-import {computed, ref, watchEffect} from "vue";
+import { computed, ref, watchEffect } from 'vue'
 
 const settingsStore = useSettingsStore()
 const theme = computed(() => settingsStore.theme)

@@ -70,7 +70,7 @@ import 'vue-cropper/dist/index.css'
 import { VueCropper } from 'vue-cropper'
 import { uploadAvatar } from '@/api/system/user'
 import useUserStore from '@/store/modules/user'
-import {getCurrentInstance, reactive, ref} from "vue";
+import { getCurrentInstance, reactive, ref } from 'vue'
 
 const userStore = useUserStore()
 const { proxy } = getCurrentInstance()

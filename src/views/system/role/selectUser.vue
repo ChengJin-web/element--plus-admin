@@ -68,7 +68,7 @@
 
 <script setup name="SelectUser">
 import { authUserSelectAll, unallocatedUserList } from '@/api/system/role'
-import {getCurrentInstance, reactive, ref} from "vue";
+import { getCurrentInstance, reactive, ref } from 'vue'
 
 const props = defineProps({
   roleId: {

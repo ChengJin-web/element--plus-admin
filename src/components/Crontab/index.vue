@@ -145,7 +145,7 @@ import CrontabMonth from './month.vue'
 import CrontabWeek from './week.vue'
 import CrontabYear from './year.vue'
 import CrontabResult from './result.vue'
-import {computed, getCurrentInstance, onMounted, ref, watch} from "vue";
+import { computed, getCurrentInstance, onMounted, ref, watch } from 'vue'
 const { proxy } = getCurrentInstance()
 const emit = defineEmits(['hide', 'fill'])
 const props = defineProps({

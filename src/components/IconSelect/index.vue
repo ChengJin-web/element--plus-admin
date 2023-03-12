@@ -21,7 +21,7 @@
 
 <script setup>
 import icons from './requireIcons'
-import {ref} from "vue";
+import { ref } from 'vue'
 
 const iconName = ref('')
 const iconList = ref(icons)

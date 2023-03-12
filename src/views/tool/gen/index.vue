@@ -201,8 +201,8 @@
 import { listTable, previewTable, delTable, genCode, synchDb } from '@/api/tool/gen'
 import router from '@/router'
 import importTable from './importTable'
-import {useRoute} from "vue-router";
-import {getCurrentInstance, onActivated, reactive, ref, toRefs} from "vue";
+import { useRoute } from 'vue-router'
+import { getCurrentInstance, onActivated, reactive, ref, toRefs } from 'vue'
 
 const route = useRoute()
 const { proxy } = getCurrentInstance()

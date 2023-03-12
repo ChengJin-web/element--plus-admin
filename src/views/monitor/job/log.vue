@@ -206,8 +206,8 @@
 <script setup name="JobLog">
 import { getJob } from '@/api/monitor/job'
 import { listJobLog, delJobLog, cleanJobLog } from '@/api/monitor/jobLog'
-import {getCurrentInstance, reactive, ref, toRefs} from "vue";
-import {useRoute} from "vue-router";
+import { getCurrentInstance, reactive, ref, toRefs } from 'vue'
+import { useRoute } from 'vue-router'
 
 const { proxy } = getCurrentInstance()
 const { sys_common_status, sys_job_group } = proxy.useDict('sys_common_status', 'sys_job_group')

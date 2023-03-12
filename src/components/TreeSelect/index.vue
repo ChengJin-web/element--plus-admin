@@ -29,7 +29,7 @@
 </template>
 
 <script setup>
-import {computed, getCurrentInstance, nextTick, onMounted, ref, watch} from "vue";
+import { computed, getCurrentInstance, nextTick, onMounted, ref, watch } from 'vue'
 
 const { proxy } = getCurrentInstance()
 

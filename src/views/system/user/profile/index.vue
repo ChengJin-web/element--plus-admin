@@ -69,7 +69,7 @@ import userAvatar from './userAvatar'
 import userInfo from './userInfo'
 import resetPwd from './resetPwd'
 import { getUserProfile } from '@/api/system/user'
-import {reactive, ref} from "vue";
+import { reactive, ref } from 'vue'
 
 const activeTab = ref('userinfo')
 const state = reactive({

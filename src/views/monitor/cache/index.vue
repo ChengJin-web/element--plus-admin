@@ -112,7 +112,7 @@
 <script setup name="Cache">
 import { getCache } from '@/api/monitor/cache'
 import * as echarts from 'echarts'
-import {getCurrentInstance, ref} from "vue";
+import { getCurrentInstance, ref } from 'vue'
 
 const cache = ref([])
 const commandstats = ref(null)

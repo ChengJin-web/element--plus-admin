@@ -214,7 +214,7 @@ import {
   updateType,
   refreshCache
 } from '@/api/system/dict/type'
-import {getCurrentInstance, reactive, ref, toRefs} from "vue";
+import { getCurrentInstance, reactive, ref, toRefs } from 'vue'
 
 const { proxy } = getCurrentInstance()
 const { sys_normal_disable } = proxy.useDict('sys_normal_disable')

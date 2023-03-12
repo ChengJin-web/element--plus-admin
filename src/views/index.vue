@@ -1,8 +1,6 @@
 <template>
   <div class="app-container home">
     <el-row :gutter="20">
-
-
       <el-col :sm="24" :lg="12" style="padding-left: 50px">
         <el-row>
           <el-col :span="12">
@@ -41,8 +39,7 @@
   </div>
 </template>
 
-<script setup name="Index">
-</script>
+<script setup name="Index"></script>
 
 <style scoped lang="scss">
 .home {

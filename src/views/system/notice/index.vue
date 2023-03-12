@@ -180,7 +180,7 @@
 
 <script setup name="Notice">
 import { listNotice, getNotice, delNotice, addNotice, updateNotice } from '@/api/system/notice'
-import {getCurrentInstance, reactive, ref, toRefs} from "vue";
+import { getCurrentInstance, reactive, ref, toRefs } from 'vue'
 
 const { proxy } = getCurrentInstance()
 const { sys_notice_status, sys_notice_type } = proxy.useDict('sys_notice_status', 'sys_notice_type')

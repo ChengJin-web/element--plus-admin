@@ -268,7 +268,7 @@
 
 <script setup>
 import { getServer } from '@/api/monitor/server'
-import {getCurrentInstance, ref} from "vue";
+import { getCurrentInstance, ref } from 'vue'
 
 const server = ref([])
 const { proxy } = getCurrentInstance()

@@ -62,13 +62,13 @@
       </span>
     </div>
 
-<!--    <div class="drawer-item">-->
-<!--      <span> 深色 </span>-->
-<!--      <span class="comp-style">-->
-<!--        <span @click="toggleDark()"></span>-->
-<!--        <el-switch v-model="isDark" class="drawer-switch" />-->
-<!--      </span>-->
-<!--    </div>-->
+    <!--    <div class="drawer-item">-->
+    <!--      <span> 深色 </span>-->
+    <!--      <span class="comp-style">-->
+    <!--        <span @click="toggleDark()"></span>-->
+    <!--        <el-switch v-model="isDark" class="drawer-switch" />-->
+    <!--      </span>-->
+    <!--    </div>-->
     <el-divider />
 
     <h3 class="drawer-title">系统布局配置</h3>
@@ -121,11 +121,10 @@ import useAppStore from '@/store/modules/app'
 import useSettingsStore from '@/store/modules/settings'
 import usePermissionStore from '@/store/modules/permission'
 import { handleThemeStyle } from '@/utils/theme'
-import {computed, getCurrentInstance, ref} from "vue";
+import { computed, getCurrentInstance, ref } from 'vue'
 // import { useDark, useToggle } from '@vueuse/core'
 
-
-import {isDark, toggleDark} from '@/utils/dark';
+import { isDark, toggleDark } from '@/utils/dark'
 
 const { proxy } = getCurrentInstance()
 const appStore = useAppStore()
@@ -160,7 +159,6 @@ const predefineColors = ref([
 //     useToggle(!isDark)
 //   }
 // })
-
 
 /** 是否需要topNav */
 const topNav = computed({

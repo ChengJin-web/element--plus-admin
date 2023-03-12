@@ -293,7 +293,7 @@
 </template>
 
 <script setup name="Role">
-import {getCurrentInstance, nextTick, reactive, ref, toRefs} from "vue";
+import { getCurrentInstance, nextTick, reactive, ref, toRefs } from 'vue'
 import {
   addRole,
   changeRoleStatus,
@@ -305,7 +305,7 @@ import {
   deptTreeSelect
 } from '@/api/system/role'
 import { roleMenuTreeselect, treeselect as menuTreeselect } from '@/api/system/menu'
-import {useRouter} from "vue-router";
+import { useRouter } from 'vue-router'
 
 const router = useRouter()
 const { proxy } = getCurrentInstance()

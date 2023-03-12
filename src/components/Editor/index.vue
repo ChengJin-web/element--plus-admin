@@ -13,7 +13,7 @@
 <script setup>
 import { QuillEditor } from '@vueup/vue-quill'
 import '@vueup/vue-quill/dist/vue-quill.snow.css'
-import {computed, ref, watch} from "vue";
+import { computed, ref, watch } from 'vue'
 
 const props = defineProps({
   /* 编辑器的内容 */

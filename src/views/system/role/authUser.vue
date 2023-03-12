@@ -96,9 +96,9 @@
 
 <script setup name="AuthUser">
 import selectUser from './selectUser'
-import {getCurrentInstance, reactive, ref} from "vue";
+import { getCurrentInstance, reactive, ref } from 'vue'
 import { allocatedUserList, authUserCancel, authUserCancelAll } from '@/api/system/role'
-import {useRoute} from "vue-router";
+import { useRoute } from 'vue-router'
 
 const route = useRoute()
 const { proxy } = getCurrentInstance()

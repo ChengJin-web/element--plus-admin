@@ -54,8 +54,8 @@
 
 <script setup name="AuthRole">
 import { getAuthRole, updateAuthRole } from '@/api/system/user'
-import {useRoute} from "vue-router";
-import {getCurrentInstance, nextTick, ref} from "vue";
+import { useRoute } from 'vue-router'
+import { getCurrentInstance, nextTick, ref } from 'vue'
 
 const route = useRoute()
 const { proxy } = getCurrentInstance()

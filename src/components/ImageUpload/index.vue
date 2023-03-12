@@ -39,7 +39,7 @@
 
 <script setup>
 import { getToken } from '@/utils/auth'
-import {computed, getCurrentInstance, ref, watch} from "vue";
+import { computed, getCurrentInstance, ref, watch } from 'vue'
 
 const props = defineProps({
   modelValue: [String, Object, Array],

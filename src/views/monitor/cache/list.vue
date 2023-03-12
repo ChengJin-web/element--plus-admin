@@ -158,7 +158,7 @@ import {
   clearCacheKey,
   clearCacheAll
 } from '@/api/monitor/cache'
-import {getCurrentInstance, ref} from "vue";
+import { getCurrentInstance, ref } from 'vue'
 
 const { proxy } = getCurrentInstance()
 
