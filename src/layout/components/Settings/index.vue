@@ -61,6 +61,14 @@
         <el-color-picker v-model="theme" :predefine="predefineColors" @change="themeChange" />
       </span>
     </div>
+
+<!--    <div class="drawer-item">-->
+<!--      <span> 深色 </span>-->
+<!--      <span class="comp-style">-->
+<!--        <span @click="toggleDark()"></span>-->
+<!--        <el-switch v-model="isDark" class="drawer-switch" />-->
+<!--      </span>-->
+<!--    </div>-->
     <el-divider />
 
     <h3 class="drawer-title">系统布局配置</h3>
@@ -114,6 +122,10 @@ import useSettingsStore from '@/store/modules/settings'
 import usePermissionStore from '@/store/modules/permission'
 import { handleThemeStyle } from '@/utils/theme'
 import {computed, getCurrentInstance, ref} from "vue";
+// import { useDark, useToggle } from '@vueuse/core'
+
+
+import {isDark, toggleDark} from '@/utils/dark';
 
 const { proxy } = getCurrentInstance()
 const appStore = useAppStore()
@@ -134,7 +146,23 @@ const predefineColors = ref([
   '#c71585'
 ])
 
-/** 是否需要topnav */
+// /** 是否黑暗模式 */
+// const isDark = useDark()
+// const toggleDark = () => {
+//   console.log(isDark)
+//   useToggle(isDark.value)
+// }
+// const dark = computed({
+//   get: () => storeSettings.value.dark,
+//   set: (val) => {
+//    const  isDark = useDark()
+//     settingsStore.changeSetting({ key: 'dark', value: val })
+//     useToggle(!isDark)
+//   }
+// })
+
+
+/** 是否需要topNav */
 const topNav = computed({
   get: () => storeSettings.value.topNav,
   set: (val) => {
@@ -145,7 +173,7 @@ const topNav = computed({
     }
   }
 })
-/** 是否需要tagview */
+/** 是否需要tagView */
 const tagsView = computed({
   get: () => storeSettings.value.tagsView,
   set: (val) => {

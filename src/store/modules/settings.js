@@ -2,7 +2,7 @@ import defaultSettings from '@/settings'
 import { useDynamicTitle } from '@/utils/dynamicTitle'
 import { defineStore } from 'pinia'
 
-const { sideTheme, showSettings, topNav, tagsView, fixedHeader, sidebarLogo, dynamicTitle } =
+const { sideTheme, showSettings, dark, topNav, tagsView, fixedHeader, sidebarLogo, dynamicTitle } =
   defaultSettings
 
 const storageSetting = JSON.parse(localStorage.getItem('layout-setting')) || ''
@@ -13,6 +13,7 @@ const useSettingsStore = defineStore('settings', {
     theme: storageSetting.theme || '#409EFF',
     sideTheme: storageSetting.sideTheme || sideTheme,
     showSettings: showSettings,
+    dark: storageSetting.dark === undefined ? dark : storageSetting.dark,
     topNav: storageSetting.topNav === undefined ? topNav : storageSetting.topNav,
     tagsView: storageSetting.tagsView === undefined ? tagsView : storageSetting.tagsView,
     fixedHeader:
@@ -26,9 +27,10 @@ const useSettingsStore = defineStore('settings', {
     // 修改布局设置
     changeSetting(data) {
       const { key, value } = data
-      if (this.hasOwnProperty(key)) {
-        this[key] = value
-      }
+      this[key] = value
+      // if (this.hasOwnProperty(key)) {
+      //   this[key] = value
+      // }
     },
     // 设置网页标题
     setTitle(title) {
