@@ -7,12 +7,12 @@
         </keep-alive>
       </transition>
     </router-view>
-<!--    <IframeToggle />-->
+   <IframeToggle />
   </section>
 </template>
 
 <script setup>
-// import IframeToggle from './IframeToggle/index'
+import IframeToggle from './IframeToggle/index'
 import useTagsViewStore from '@/store/modules/tagsView'
 
 const tagsViewStore = useTagsViewStore()
