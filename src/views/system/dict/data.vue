@@ -201,10 +201,10 @@
 </template>
 
 <script setup name="Data">
+import { getCurrentInstance, ref, reactive, toRefs } from 'vue'
 import useDictStore from '@/store/modules/dict'
 import { optionselect as getDictOptionselect, getType } from '@/api/system/dict/type'
 import { listData, getData, delData, addData, updateData } from '@/api/system/dict/data'
-import { reactive, ref, toRefs } from 'vue'
 import { useRoute } from 'vue-router'
 
 const { proxy } = getCurrentInstance()
