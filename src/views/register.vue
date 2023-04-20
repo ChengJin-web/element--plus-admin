@@ -150,7 +150,7 @@ function handleRegister() {
         })
         .catch(() => {
           loading.value = false
-          if (captchaEnabled) {
+          if (captchaEnabled.value) {
             getCode()
           }
         })

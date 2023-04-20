@@ -5,6 +5,8 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
+
 const props = defineProps({
   iconClass: {
     type: String,
@@ -19,8 +21,6 @@ const props = defineProps({
     default: ''
   }
 })
-
-import { computed } from 'vue'
 
 const iconName = computed(() => `#icon-${props.iconClass}`)
 const svgClass = computed(() => {

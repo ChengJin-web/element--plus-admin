@@ -718,7 +718,7 @@ function handleUpdate(row) {
     form.value.roleIds = response.roleIds
     open.value = true
     title.value = '修改用户'
-    form.password = ''
+    form.value.password = ''
   })
 }
 /** 提交按钮 */

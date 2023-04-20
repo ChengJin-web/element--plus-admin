@@ -66,7 +66,6 @@ const props = defineProps({
 })
 
 const { proxy } = getCurrentInstance()
-// eslint-disable-next-line vue/valid-define-emits
 const emit = defineEmits()
 const number = ref(0)
 const uploadList = ref([])

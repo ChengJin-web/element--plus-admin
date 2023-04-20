@@ -7,7 +7,7 @@
         </keep-alive>
       </transition>
     </router-view>
-   <IframeToggle />
+    <IframeToggle />
   </section>
 </template>
 

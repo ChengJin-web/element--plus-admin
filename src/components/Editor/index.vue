@@ -57,8 +57,7 @@ const options = ref({
     ]
   },
   placeholder: '请输入内容',
-  readOnly: props.readOnly,
-  theme: 'snow'
+  readOnly: props.readOnly
 })
 
 const styles = computed(() => {
