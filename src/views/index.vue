@@ -4,7 +4,7 @@
       <el-col :sm="24" :lg="12" style="padding-left: 50px">
         <el-row>
           <el-col :span="12">
-            <h2>若依后台管理框架(技术选型)</h2>
+            <h2>后台管理框架(技术选型)</h2>
           </el-col>
         </el-row>
         <el-row>
