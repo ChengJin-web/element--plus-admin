@@ -23,8 +23,7 @@ defineProps({
   }
 })
 
-// eslint-disable-next-line vue/valid-define-emits
-const emit = defineEmits()
+const emit = defineEmits(['toggleClick'])
 const toggleClick = () => {
   emit('toggleClick')
 }

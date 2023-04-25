@@ -60,7 +60,7 @@ const props = defineProps({
   }
 })
 
-const emit = defineEmits()
+const emit = defineEmits(['update:page','update:limit'])
 const currentPage = computed({
   get() {
     return props.page
