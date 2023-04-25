@@ -447,12 +447,12 @@ function getMenuTreeselect() {
   })
 }
 /** 所有部门节点数据 */
-function getDeptAllCheckedKeys() {
+function getAllCheckedKeys(domRef) {
   // 目前被选中的部门节点
-  let checkedKeys = deptRef.value.getCheckedKeys()
+  const checkedKeys = domRef.getCheckedKeys()
   // 半选中的部门节点
-  let halfCheckedKeys = deptRef.value.getHalfCheckedKeys()
-  checkedKeys.unshift.apply(checkedKeys, halfCheckedKeys)
+  const halfCheckedKeys = domRef.getHalfCheckedKeys()
+  checkedKeys.push(...halfCheckedKeys)
   return checkedKeys
 }
 /** 重置新增的表单以及其他数据  */
@@ -551,29 +551,20 @@ function handleCheckedTreeConnect(value, type) {
     form.value.deptCheckStrictly = value ? true : false
   }
 }
-/** 所有菜单节点数据 */
-function getMenuAllCheckedKeys() {
-  // 目前被选中的菜单节点
-  let checkedKeys = menuRef.value.getCheckedKeys()
-  // 半选中的菜单节点
-  let halfCheckedKeys = menuRef.value.getHalfCheckedKeys()
-  checkedKeys.unshift.apply(checkedKeys, halfCheckedKeys)
-  return checkedKeys
-}
+
 /** 提交按钮 */
 function submitForm() {
   proxy.$refs['roleRef'].validate((valid) => {
     if (valid) {
-      if (form.value.roleId != undefined) {
-        form.value.menuIds = getMenuAllCheckedKeys()
-        updateRole(form.value).then((response) => {
+      form.value.menuIds = getAllCheckedKeys(menuRef.value)
+      if (form.value.roleId !== undefined) {
+        updateRole(form.value).then(() => {
           proxy.$modal.msgSuccess('修改成功')
           open.value = false
           getList()
         })
       } else {
-        form.value.menuIds = getMenuAllCheckedKeys()
-        addRole(form.value).then((response) => {
+        addRole(form.value).then(() => {
           proxy.$modal.msgSuccess('新增成功')
           open.value = false
           getList()
@@ -615,8 +606,8 @@ function handleDataScope(row) {
 /** 提交按钮（数据权限） */
 function submitDataScope() {
   if (form.value.roleId != undefined) {
-    form.value.deptIds = getDeptAllCheckedKeys()
-    dataScope(form.value).then((response) => {
+    form.value.deptIds = getAllCheckedKeys(deptRef.value)
+    dataScope(form.value).then(() => {
       proxy.$modal.msgSuccess('修改成功')
       openDataScope.value = false
       getList()
